@@ -1,0 +1,72 @@
+# Main options
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#000000"
+terminal-font: "Terminus Regular 16"
+terminal-box: "terminal_box_*.png"
+terminal-left: "6%"
+terminal-top: "27%"
+terminal-width: "42%"
+terminal-height: "61%"
+terminal-border: "0"
+
+# Boot menu
++ boot_menu {
+  left = 7%
+  top = 41%
+  width = 40%
+  height = 65%
+  item_font = "Public Sans Bold 21"
+  item_color = "#cccccc"
+  selected_item_color = "#ffffff"
+  icon_width = 75
+  icon_height = 75
+  item_icon_space = 20
+  item_height = 70
+  item_padding = 3
+  item_spacing = 13
+  selected_item_pixmap_style = "select_*.png"
+}
+
+# Countdown label
++ label {
+  left = 7%
+  top = 78%
+  align = "left"
+  id = "__timeout__"
+  text = "Booting selected OS in %d..."
+  color = "#cccccc"
+  font = "DIN 2014 Regular 20"
+}
+
+# === Custom Labels (Bold with DejaVu Sans) ===
+
+# Title: Choose an operating system
++ label {
+  text = "Choose an operating system"
+  font = "Public Sans Bold 30"
+  color = "#ffffff"
+  align = "left"
+  left = 7%
+  top = 33%
+}
+
+# Subtitle: Select an OS to boot
++ label {
+  text = "Select an OS to boot"
+  font = "Public Sans Bold 20"
+  color = "#cccccc"
+  align = "left"
+  left = 7%
+  top = 37%
+}
+
+# Navigation Hint
++ label {
+  text = "Navigate using up | down key and hit enter to select"
+  font = "Public Sans Bold 23"
+  color = "#ffffff"
+  align = "left"
+  left = 7%
+  top = 91%
+}
