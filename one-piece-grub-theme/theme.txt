@@ -31,7 +31,7 @@ terminal-border: "0"
 # Countdown label
 + label {
   left = 7%
-  top = 78%
+  top = 88%
   align = "left"
   id = "__timeout__"
   text = "Booting selected OS in %d..."
@@ -39,7 +39,6 @@ terminal-border: "0"
   font = "DIN 2014 Regular 20"
 }
 
-# === Custom Labels (Bold with DejaVu Sans) ===
 
 # Title: Choose an operating system
 + label {
