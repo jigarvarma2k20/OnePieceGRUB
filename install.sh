@@ -80,6 +80,21 @@ sudo mkdir -p "$THEME_DIR"
 sudo cp -r "$THEME_NAME" "$THEME_DIR/"
 echo "✅ Theme installed."
 
+# Create backups of GRUB config before modifying
+BACKUP_BASE="${GRUB_CONFIG}.onepiece.bak"
+TS=$(date +%Y%m%d-%H%M%S)
+if [ -f "$GRUB_CONFIG" ]; then
+  if [ ! -f "$BACKUP_BASE" ]; then
+    echo "🗂️ Creating initial backup at $BACKUP_BASE"
+    sudo cp -p "$GRUB_CONFIG" "$BACKUP_BASE"
+  fi
+  BACKUP_TS="${BACKUP_BASE}.${TS}"
+  sudo cp -p "$GRUB_CONFIG" "$BACKUP_TS"
+  echo "✅ Saved timestamped backup: $BACKUP_TS"
+else
+  echo "⚠️ $GRUB_CONFIG not found; skipping backup."
+fi
+
 # Set GRUB theme and disable console mode
 echo "🛠️ Updating GRUB configuration..."
 sudo sed -i '/^GRUB_THEME=/d' "$GRUB_CONFIG"
